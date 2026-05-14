@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CRAZY TIME ｜ ディーラー求人 ｜ 新橋駅徒歩3分</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Navy */
+      --navy:         oklch(0.27 0.09 247);
+      --navy-mid:     oklch(0.40 0.08 247);
+      /* Gold (overridable via tweaks) */
+      --gold:         oklch(0.70 0.13 82);
+      --gold-light:   oklch(0.85 0.09 82);
+      --gold-pale:    oklch(0.96 0.04 82);
+      /* Neutrals */
+      --ivory:        oklch(0.975 0.008 85);
+      --beige:        oklch(0.935 0.015 85);
+      --beige-mid:    oklch(0.87  0.018 85);
+      /* Text */
+      --text:         oklch(0.22 0.025 247);
+      --text-mid:     oklch(0.42 0.020 247);
+      --text-light:   oklch(0.60 0.015 247);
+      /* Fonts */
+      --font-display: 'Noto Serif JP', serif;
+      --font-body:    'Noto Sans JP', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: oklch(0.87 0.02 247);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    #root {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .lp-wrapper {
+      width: 100%;
+      max-width: 430px;
+      background: var(--ivory);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .lp-content {
+      padding-bottom: 76px; /* clear fixed CTA bar */
+    }
+
+    /* ── Scroll reveal ───────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── Hero fade-in ────────────────────────── */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+    #hero h1 {
+      animation: heroFadeUp 0.9s ease 0.15s both;
+    }
+    #hero p {
+      animation: heroFadeUp 0.9s ease 0.30s both;
+    }
+    #hero .hero-badges {
+      animation: heroFadeUp 0.9s ease 0.45s both;
+    }
+    #hero .hero-ctas {
+      animation: heroFadeUp 0.9s ease 0.55s both;
+    }
+
+    /* ── Form inputs ─────────────────────────── */
+    input, textarea, select, button {
+      font-family: var(--font-body);
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--navy) !important;
+      box-shadow: 0 0 0 3px oklch(0.27 0.09 247 / 0.10);
+    }
+
+    /* ── image-slot default size ─────────────── */
+    image-slot {
+      display: block;
+    }
+
+    /* ── Thin scrollbar on desktop ───────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: oklch(0.75 0.02 247); border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="image-slot.js"></script>
+  <script src="lp-images.js"></script>
+  <script type="text/babel" src="lp-components.jsx"></script>
+  <script type="text/babel" src="lp-sections.jsx"></script>
+  <script type="text/babel" src="lp-app.jsx"></script>
+</body>
+</html>
